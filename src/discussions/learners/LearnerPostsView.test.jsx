@@ -28,6 +28,8 @@ import './data/__factories__';
 
 let store;
 let axiosMock;
+const coursesApiUrl = getCoursesApiUrl();
+const courseConfigApiUrl = getCourseConfigApiUrl();
 const courseId = 'course-v1:edX+TestX+Test_Course';
 const username = 'abc123';
 let container;
