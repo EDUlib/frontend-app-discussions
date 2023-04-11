@@ -82,7 +82,7 @@ function Post({
         dispatch(updateExistingThread(post.id, { closed: true }));
       }
     },
-    [ContentActions.COPY_LINK]: () => { navigator.clipboard.writeText(postURL.href); },
+    [ContentActions.COPY_LINK]: () => { navigator.clipboard.writeText(`${window.location.origin}/${courseId}/posts/${post.id}`); },
     [ContentActions.PIN]: () => dispatch(updateExistingThread(post.id, { pinned: !post.pinned })),
     [ContentActions.REPORT]: () => handleAbusedFlag(),
   }), [
