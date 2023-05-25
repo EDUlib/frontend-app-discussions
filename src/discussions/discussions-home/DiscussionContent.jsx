@@ -6,9 +6,12 @@ import { Route, Switch } from 'react-router';
 import Spinner from '../../components/Spinner';
 import { Routes } from '../../data/constants';
 
+<<<<<<< HEAD
 const PostEditor = lazy(() => import('../posts/post-editor/PostEditor'));
 const PostCommentsView = lazy(() => import('../post-comments/PostCommentsView'));
 
+=======
+>>>>>>> 5c6e40b (feat: upgraded to node v18, added .nvmrc and updated workflows (#471))
 const DiscussionContent = () => {
   const postEditorVisible = useSelector((state) => state.threads.postEditorVisible);
 

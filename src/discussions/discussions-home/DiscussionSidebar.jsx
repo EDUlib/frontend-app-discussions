@@ -19,6 +19,7 @@ import {
 } from '../data/hooks';
 import { selectconfigLoadingStatus, selectEnableInContext } from '../data/selectors';
 
+<<<<<<< HEAD
 const TopicPostsView = lazy(() => import('../in-context-topics/TopicPostsView'));
 const InContextTopicsView = lazy(() => import('../in-context-topics/TopicsView'));
 const LearnerPostsView = lazy(() => import('../learners/LearnerPostsView'));
@@ -26,6 +27,8 @@ const LearnersView = lazy(() => import('../learners/LearnersView'));
 const PostsView = lazy(() => import('../posts/PostsView'));
 const LegacyTopicsView = lazy(() => import('../topics/TopicsView'));
 
+=======
+>>>>>>> 5c6e40b (feat: upgraded to node v18, added .nvmrc and updated workflows (#471))
 const DiscussionSidebar = ({ displaySidebar, postActionBarRef }) => {
   const location = useLocation();
   const isOnDesktop = useIsOnDesktop();
@@ -106,6 +109,14 @@ const DiscussionSidebar = ({ displaySidebar, postActionBarRef }) => {
       </Suspense>
     </div>
   );
+<<<<<<< HEAD
+=======
+};
+
+DiscussionSidebar.defaultProps = {
+  displaySidebar: false,
+  postActionBarRef: null,
+>>>>>>> 5c6e40b (feat: upgraded to node v18, added .nvmrc and updated workflows (#471))
 };
 
 DiscussionSidebar.propTypes = {
@@ -116,9 +127,13 @@ DiscussionSidebar.propTypes = {
   ]),
 };
 
+<<<<<<< HEAD
 DiscussionSidebar.defaultProps = {
   displaySidebar: false,
   postActionBarRef: null,
 };
 
 export default React.memo(DiscussionSidebar);
+=======
+export default DiscussionSidebar;
+>>>>>>> 5c6e40b (feat: upgraded to node v18, added .nvmrc and updated workflows (#471))
