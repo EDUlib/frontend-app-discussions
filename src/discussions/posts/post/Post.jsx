@@ -93,6 +93,11 @@ const Post = ({ handleAddResponseButton }) => {
     }
   }, [abuseFlagged, postId, showReportConfirmation]);
 
+  const handlePostCopyLink = useCallback(() => {
+    const postURL = new URL(`${getConfig().PUBLIC_PATH}${courseId}/posts/${post.id}`, window.location.origin);
+    navigator.clipboard.writeText(postURL.href);
+  }, [window.location.origin, post.id, courseId]);
+
   const actionHandlers = useMemo(() => ({
     [ContentActions.EDIT_CONTENT]: handlePostContentEdit,
     [ContentActions.DELETE]: showDeleteConfirmation,
