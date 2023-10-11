@@ -23,7 +23,6 @@ import messages from '../messages';
 import { selectPostEditorVisible } from '../posts/data/selectors';
 import useFeedbackWrapper from './FeedbackWrapper';
 
-<<<<<<< HEAD
 const Footer = lazy(() => import('@edx/frontend-component-footer'));
 const PostActionsBar = lazy(() => import('../posts/post-actions-bar/PostActionsBar'));
 const CourseTabsNavigation = lazy(() => import('../../components/NavigationBar/CourseTabsNavigation'));
@@ -34,8 +33,6 @@ const DiscussionsRestrictionBanner = lazy(() => import('./DiscussionsRestriction
 const DiscussionContent = lazy(() => import('./DiscussionContent'));
 const DiscussionSidebar = lazy(() => import('./DiscussionSidebar'));
 
-=======
->>>>>>> 5c6e40b (feat: upgraded to node v18, added .nvmrc and updated workflows (#471))
 const DiscussionsHome = () => {
   const location = useLocation();
   const postActionBarRef = useRef(null);
@@ -63,7 +60,6 @@ const DiscussionsHome = () => {
   if (displayContentArea) { displaySidebar = isOnDesktop; }
 
   return (
-<<<<<<< HEAD
     <Suspense fallback={(<Spinner />)}>
       <DiscussionContext.Provider value={{
         page,
@@ -77,44 +73,6 @@ const DiscussionsHome = () => {
       >
         {!enableInContextSidebar && (
           <Header courseOrg={org} courseNumber={courseNumber} courseTitle={courseTitle} />
-=======
-    // eslint-disable-next-line react/jsx-no-constructed-context-values
-    <DiscussionContext.Provider value={{
-      page,
-      courseId,
-      postId,
-      topicId,
-      enableInContextSidebar,
-      category,
-      learnerUsername,
-    }}
-    >
-      {!enableInContextSidebar && <Header courseOrg={org} courseNumber={courseNumber} courseTitle={courseTitle} />}
-      <main className="container-fluid d-flex flex-column p-0 w-100" id="main" tabIndex="-1">
-        {!enableInContextSidebar && <CourseTabsNavigation activeTab="discussion" courseId={courseId} />}
-        <div
-          className={classNames('header-action-bar', {
-            'shadow-none border-light-300 border-bottom': enableInContextSidebar,
-          })}
-          ref={postActionBarRef}
-        >
-          <div
-            className={classNames('d-flex flex-row justify-content-between navbar fixed-top', {
-              'pl-4 pr-3 py-0': enableInContextSidebar,
-            })}
-          >
-            {!enableInContextSidebar && <Route path={Routes.DISCUSSIONS.PATH} component={NavigationBar} />}
-            <PostActionsBar />
-          </div>
-          {isFeedbackBannerVisible && <InformationBanner />}
-          <BlackoutInformationBanner />
-        </div>
-        {provider === DiscussionProvider.LEGACY && (
-          <Route
-            path={[Routes.POSTS.PATH, Routes.TOPICS.CATEGORY]}
-            component={LegacyBreadcrumbMenu}
-          />
->>>>>>> 5c6e40b (feat: upgraded to node v18, added .nvmrc and updated workflows (#471))
         )}
         <main className="container-fluid d-flex flex-column p-0 w-100" id="main" tabIndex="-1">
           {!enableInContextSidebar && <CourseTabsNavigation activeTab="discussion" courseId={courseId} />}
